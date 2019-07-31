@@ -5,7 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 
 const NOOP = () => {};
 
-const Searchbar = ({ onSearch = () => {} }) => {
+const Searchbar = ({ onSearch = NOOP }) => {
   const [value, setValue] = useState('');
 
   const handleKeyDown = (e, value) => {
@@ -44,7 +44,7 @@ Searchbar.propTypes = {
 };
 
 Searchbar.defaultProps = {
-  onSearch: NOOP(),
+  onSearch: NOOP,
 };
 
 export default Searchbar;
